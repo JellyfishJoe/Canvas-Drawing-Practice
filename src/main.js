@@ -44,3 +44,19 @@ for (let i = 0; i < 11; i++) {
 ctx.strokeText("strokes the world", center, h - 30);
 */
 
+const img = new Image();
+img.src = "res/images/snowflake2.png";
+img.addEventListener("load", draw, false);
+
+
+function draw() {
+
+	for (let i = 0; i < 50; i++) {
+		let x = Math.random() * w;
+		let y = Math.random() * h;
+		let scale = Math.random() / 20;
+
+		ctx.drawImage(img, x, y, 2240 * scale, 2240 * scale);
+	}
+
+}
