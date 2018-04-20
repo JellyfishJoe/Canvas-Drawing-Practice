@@ -11,9 +11,10 @@ ctx.arc(325, 170, 25, 0, Math.PI * 2, false);
 ctx.fill();
 ctx.stroke();
 */
-/*
-const { width: w, height: h } = canvas;
 
+const { width: w, height: h } = canvas;
+ 
+/*
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, w, h);
 ctx.fillStyle = "#555";
@@ -31,10 +32,9 @@ for (let i = 0; i < 550; i++) {
 	ctx.fill();
 }
 */
-
+/*
 ctx.font = "20pt courier";
 
-const { width: w, height: h } = canvas;
 const center = w / 2;
 ctx.textAlign = "center";
 
@@ -42,3 +42,5 @@ for (let i = 0; i < 11; i++) {
 	ctx.fillText("if you're in the game", center, i * 40);
 }
 ctx.strokeText("strokes the world", center, h - 30);
+*/
+
