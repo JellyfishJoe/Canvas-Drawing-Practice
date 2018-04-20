@@ -56,3 +56,15 @@ function draw() {
 	}
 }
 */
+
+const img = new Image();
+img.src = "res/image/snowflake.png";
+img.addEventListener("load", draw, false);
+
+for (let i = 0; i < 100; i++) {
+	let x = Math.random() * w;
+	let y = Math.random() * h;
+	let scale = Math.random();
+
+	ctx.drawImage(img, x, y, width * scale, height * scale);
+}
