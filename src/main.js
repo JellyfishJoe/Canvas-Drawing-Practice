@@ -43,7 +43,7 @@ for (let i = 0; i < 11; i++) {
 }
 ctx.strokeText("strokes the world", center, h - 30);
 */
-
+/*
 const img = new Image();
 img.src = "res/images/rick.png";
 img.addEventListener("load", draw, false);
@@ -55,3 +55,4 @@ function draw() {
 		ctx.drawImage(img, x, y);
 	}
 }
+*/
