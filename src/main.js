@@ -32,6 +32,8 @@ for (let i = 0; i < 550; i++) {
 }
 */
 
+ctx.font = "20pt courier";
+
 const { width: w, height: h } = canvas;
 const center = w / 2;
 ctx.textAlign = "center";
