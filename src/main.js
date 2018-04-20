@@ -43,7 +43,7 @@ for (let i = 0; i < 11; i++) {
 }
 ctx.strokeText("strokes the world", center, h - 30);
 */
-
+/*
 const img = new Image();
 img.src = "res/images/snowflake2.png";
 img.addEventListener("load", draw, false);
@@ -60,3 +60,28 @@ function draw() {
 	}
 
 }
+*/
+
+const img = new Image();
+img.src = "res/images/rick.png";
+img.addEventListener("load", draw, false)
+
+// Draw the original
+function draw() {
+	//ctx.drawImage(img, w / 2, h / 2);
+
+	// Draw cropped images
+	for (let i = 0; i < 22; i++) {
+		ctx.drawImage(
+			img,
+			// source
+			32, 0, 250, 500,
+			// destination location
+			i * 20, i * 20,
+			//destination scale
+			i * 0.2 * 53, i * 0.2 * 75
+			);
+	}
+
+}
+
