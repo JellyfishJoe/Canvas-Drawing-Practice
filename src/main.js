@@ -75,6 +75,8 @@ function draw() {
 }
 */
 
+/*
+////////// I don't know what the fuck this does
 const img = new Image();
 img.src = "res/image/snowflake.png";
 img.addEventListener("load", draw, false);
@@ -86,6 +88,7 @@ for (let i = 0; i < 100; i++) {
 
 	ctx.drawImage(img, x, y, width * scale, height * scale);
 }
+*/
 
 /*
 //////////SNOWFLAKE FIELD
@@ -160,10 +163,43 @@ draw();
 ctx.translate(w / 2, h / 2);
 
 var color = 0;
+var start = 1;
+var started = 0;
+var multiplier = 1;
+
+document.getElementById("starter").addEventListener("click", choicyBoi);
+
+document.getElementById("stopper").addEventListener("click", stoppyBoi);
+
+document.getElementById("next").addEventListener("click", next);
+
+document.getElementById("forwards").addEventListener("click", setForwards);
+
+document.getElementById("backwards").addEventListener("click", setBackwards);
+
+
+function choicyBoi() {
+	start = 1;
+	doIt();
+}
+
+
+function doIt() {
+	if(start == 1) {
+		clear();
+		draw();
+		window.setTimeout(clicker, 0);
+		//console.log("worked");
+	}else {
+		//console.log("failed");
+	}
+}
+
+function draw() {
 
 
 	for (let ring = 1; ring < 53; ring++) {
-		ctx.fillStyle = `hsl(${(ring + color) * 25}, 90%, 50%)`;
+		ctx.fillStyle = `hsl(${(ring + color) * 15 }, 90%, 50%)`;
 		for (let dots = 0; dots < ring * 6; dots++) {
 			ctx.rotate((Math.PI * 2) / (ring * 6));
 			ctx.beginPath();
@@ -171,11 +207,50 @@ var color = 0;
 			ctx.fill();
 		}
 	}
-	
 
-document.getElementById("clicker").addEventListener("click", clear);
+	/*
+	if (color < 360) {
+		color++;
+	} else {
+		color = 1;
+	}
+	*/
+	color++;
+	console.log(color);	
+	//console.log("filled");
+}
+
+function next() {
+	start = 1;
+	window.setTimeout(doIt, 1);
+	window.setTimeout(stoppyBoi, 2);
+}
+
+
 	
 function clear() {
 	ctx.clearRect(-canvas.width, -canvas.height, canvas.width * 2, canvas.height * 2);
-	console.log("cleared");
+	//console.log("cleared");
+}
+
+function clicker() {
+	//if(stop = false) {
+		doIt();
+		//console.log("repeated");
+	//}
+	//document.getElementById("filler").click();
+}
+
+function stoppyBoi() {
+	start = 0;
+}
+
+function setForwards() {
+	multiplier = 1;
+	console.log(multiplier);
+}
+
+function setBackwards() {
+	multiplier = -1;
+	console.log(multiplier);
 }
