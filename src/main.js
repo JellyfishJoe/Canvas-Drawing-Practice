@@ -16,7 +16,6 @@ ctx.arc(325, 170, 25, 0, Math.PI * 2, false);
 ctx.fill();
 ctx.stroke();
 */
-<<<<<<< HEAD
 
 const { width: w, height: h } = canvas;
 
@@ -28,7 +27,6 @@ const { width: w, height: h } = canvas;
  
  /*
 //////////STARFIELD
->>>>>>> 7a512903b0f0656a8842ce14dc99f4dfd915a7d4
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, w, h);
 ctx.fillStyle = "#555";
@@ -46,13 +44,12 @@ for (let i = 0; i < 550; i++) {
 	ctx.fill();
 }
 */
-<<<<<<< HEAD
+
 /*
 =======
 
 /*
 //////////REPEATED TEXT AESTHETIC
->>>>>>> 7a512903b0f0656a8842ce14dc99f4dfd915a7d4
 ctx.font = "20pt courier";
 
 const center = w / 2;
@@ -63,7 +60,7 @@ for (let i = 0; i < 11; i++) {
 }
 ctx.strokeText("strokes the world", center, h - 30);
 */
-<<<<<<< HEAD
+
 /*
 const img = new Image();
 img.src = "res/images/rick.png";
@@ -89,7 +86,6 @@ for (let i = 0; i < 100; i++) {
 
 	ctx.drawImage(img, x, y, width * scale, height * scale);
 }
-=======
 
 /*
 //////////SNOWFLAKE FIELD
@@ -183,6 +179,3 @@ function clear() {
 	ctx.clearRect(-canvas.width, -canvas.height, canvas.width * 2, canvas.height * 2);
 	console.log("cleared");
 }
-
-
->>>>>>> 7a512903b0f0656a8842ce14dc99f4dfd915a7d4
