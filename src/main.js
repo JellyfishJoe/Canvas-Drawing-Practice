@@ -1,20 +1,27 @@
 const canvas = document.querySelector("#board canvas");
 const ctx = canvas.getContext("2d");
+
 /*
+//////////RED CIRCLE WITH BLACK OUTLINE
 ctx.strokeStyle = "black";
 ctx.fillStyle = "red";
 ctx.fillRect(300, 200, 50, 50);
 ctx.strokeRect(300, 200, 50, 50);
+*/
 
+/*
+//////////RED SQUARE WITH BLACK OUTLINE
 ctx.beginPath();
 ctx.arc(325, 170, 25, 0, Math.PI * 2, false);
 ctx.fill();
 ctx.stroke();
 */
 
+//////////CONSTANT FOR ALL FOLLOWING FUNCTIONS
 const { width: w, height: h } = canvas;
  
-/*
+ /*
+//////////STARFIELD
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, w, h);
 ctx.fillStyle = "#555";
@@ -32,7 +39,9 @@ for (let i = 0; i < 550; i++) {
 	ctx.fill();
 }
 */
+
 /*
+//////////REPEATED TEXT AESTHETIC
 ctx.font = "20pt courier";
 
 const center = w / 2;
@@ -43,7 +52,9 @@ for (let i = 0; i < 11; i++) {
 }
 ctx.strokeText("strokes the world", center, h - 30);
 */
+
 /*
+//////////SNOWFLAKE FIELD
 const img = new Image();
 img.src = "res/images/snowflake2.png";
 img.addEventListener("load", draw, false);
@@ -62,6 +73,8 @@ function draw() {
 }
 */
 
+/*
+//////////REPEATED IMAGE EFFECT
 const img = new Image();
 img.src = "res/images/rick.png";
 img.addEventListener("load", draw, false)
@@ -84,4 +97,53 @@ function draw() {
 	}
 
 }
+*/
+
+/*
+//////////SAVE AND RESTORE RECTANGLES
+function draw() {
+	for (let i = 0; i < 100; i++) {
+		const x = Math.random() * w;
+		const y = Math.random() * h;
+		ctx.fillRect(x, y, 50, 50);
+	}
+}
+
+ctx.fillStyle = "black";
+draw();
+
+ctx.save();
+ctx.fillStyle = "red";
+draw();
+ctx.restore;
+
+// Back in black!
+draw();
+*/
+
+
+////////// Psychedelic Circle
+ctx.translate(w / 2, h / 2);
+
+var color = 0;
+
+
+	for (let ring = 1; ring < 53; ring++) {
+		ctx.fillStyle = `hsl(${(ring + color) * 25}, 90%, 50%)`;
+		for (let dots = 0; dots < ring * 6; dots++) {
+			ctx.rotate((Math.PI * 2) / (ring * 6));
+			ctx.beginPath();
+			ctx.arc(0, ring * 15, 7, 0, Math.PI * 2, true);
+			ctx.fill();
+		}
+	}
+	
+
+document.getElementById("clicker").addEventListener("click", clear);
+	
+function clear() {
+	ctx.clearRect(-canvas.width, -canvas.height, canvas.width * 2, canvas.height * 2);
+	console.log("cleared");
+}
+
 
