@@ -208,22 +208,29 @@ function draw() {
 		}
 	}
 
-	/*
-	if (color < 360) {
-		color++;
-	} else {
-		color = 1;
+	if (multiplier == 1) {
+		if (color < 360) {
+			color++;
+		} else {
+			color = 0;
+		}
+	} else if (multiplier == -1) {
+		if (color > -360) {
+			color--;
+		} else {
+			color = 0;
+		}
 	}
-	*/
-	color++;
 	console.log(color);	
 	//console.log("filled");
 }
 
 function next() {
-	start = 1;
-	window.setTimeout(doIt, 1);
-	window.setTimeout(stoppyBoi, 2);
+	//start = 1;
+	//window.setTimeout(doIt, 1);
+	//window.setTimeout(stoppyBoi, 2);
+	clear();
+	draw();
 }
 
 
@@ -234,10 +241,8 @@ function clear() {
 }
 
 function clicker() {
-	//if(stop = false) {
 		doIt();
 		//console.log("repeated");
-	//}
 	//document.getElementById("filler").click();
 }
 
